@@ -99,7 +99,6 @@ const slideIn = {
 
 export default function Portfolio() {
   const [isSkillsHovered, setIsSkillsHovered] = useState(false);
-  const [isLanguagesHovered, setIsLanguagesHovered] = useState(false);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   return (
@@ -201,9 +200,6 @@ export default function Portfolio() {
                       }}
                       transition={{ duration: 0.3 }}
                     >
-                      <p className="leading-relaxed">
-                        {skill.description || "Click to learn more about this skill"}
-                      </p>
                     </motion.div>
                   </motion.div>
                 ))}

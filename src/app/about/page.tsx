@@ -20,18 +20,18 @@ const nunito = Nunito({
 
 export default function About() {
   // Ref for the cursor follower effect
-  const cursorFollowerRef = useRef(null);
+  const cursorFollowerRef = useRef<HTMLDivElement>(null);
   
   // Mouse follower effect
   useEffect(() => {
-    const handleMouseMove = (e:any) => {
+    const handleMouseMove = (e: MouseEvent): void => {
       if (!cursorFollowerRef.current) return;
       
       const x = e.clientX;
       const y = e.clientY;
       
-      // Add some delay and smoothing to the movement
-      cursorFollowerRef.current.style.transform = `translate(${x - 250}px, ${y - 250}px)`;
+      const follower = cursorFollowerRef.current as HTMLDivElement;
+      follower.style.transform = `translate(${x - 250}px, ${y - 250}px)`;
     };
     
     window.addEventListener('mousemove', handleMouseMove);
@@ -56,7 +56,7 @@ export default function About() {
 
   const paragraphVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: (custom : any) => ({
+    visible: (custom: number) => ({
       opacity: 1,
       y: 0,
       transition: { 

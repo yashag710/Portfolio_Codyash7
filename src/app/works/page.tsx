@@ -6,7 +6,6 @@ import Navbar from '@/components/Navbar';
 import { motion, easeInOut } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaCode } from 'react-icons/fa';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -82,16 +81,6 @@ const cardVariants = {
     }
   }
 };
-
-const softwareSkills = [
-  {
-    name: 'React',
-    icon: FaCode,
-    progress: 90,
-    description: 'Proficient in building modern, responsive web applications using React hooks and context API.'
-  },
-  // ... other skills with descriptions
-];
 
 export default function Works() {
   const [isMounted, setIsMounted] = useState(false);
